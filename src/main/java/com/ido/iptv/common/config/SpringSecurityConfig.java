@@ -62,17 +62,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .csrf().disable() // 关闭跨域攻击防护
                 .authorizeRequests()    //需要处理的路由
-                    .antMatchers("/user/session").permitAll()
-                    .antMatchers(HttpMethod.POST,"/user/login","/user/register").permitAll()
+                    .antMatchers(HttpMethod.POST,"/app/user/login","/app/user/register").permitAll()
                     .antMatchers("/resources/**","/signUp","/about").permitAll()
                     .antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources",
                             "/configuration/security", "/swagger-ui.html", "/webjars/**",
                             "/swagger-resources/configuration/ui","/swagge‌​r-ui.html").permitAll()
-                    .antMatchers("/admin/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
-                    .loginProcessingUrl("/user/login")
+                    .loginProcessingUrl("/user/login").permitAll()
                     .failureHandler(new MyAuthenticationFailureHandler())
                     .successHandler(new MyAuthenticationSuccessHandle())
                     .and()
