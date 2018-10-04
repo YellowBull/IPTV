@@ -1,43 +1,67 @@
 package com.ido.iptv.entity.po;
 
-import com.alibaba.fastjson.annotation.JSONField;
-import com.ido.iptv.common.validator.Add;
-import com.ido.iptv.common.validator.Query;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiParam;
-import lombok.Data;
-import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-@Data
-@ApiModel
 public class User {
-
     private Integer id;
 
-    @ApiParam("用户名")
-    @NotBlank(message = "用户名不能为空", groups = {
-            Query.class,
-            Add.class
-    })
     private String username;
 
-    @ApiParam("密码")
-    @NotBlank(message = "密码不能为空", groups = {
-            Query.class,
-            Add.class
-    })
-    @Length(min = 6, max = 20, message = "密码长度应该在6-20位之间", groups = {
-            Query.class,
-            Add.class
-    })
     private String password;
 
-    private String roles;
+    private Date create_time;
 
-    private Date createTime;
+    private Date update_time;
 
-    private Date updateTime;
+    public User(Integer id, String username, String password, Date create_time, Date update_time) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.create_time = create_time;
+        this.update_time = update_time;
+    }
+
+    public User() {
+        super();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public Date getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
+    }
+
+    public Date getUpdate_time() {
+        return update_time;
+    }
+
+    public void setUpdate_time(Date update_time) {
+        this.update_time = update_time;
+    }
 }
