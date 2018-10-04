@@ -122,6 +122,28 @@
             <version>${jjwt.version}</version>
         </dependency>
         <!--end-->
+
+		<!--访问页面的-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!--url重写的-->
+		<dependency>
+			<groupId>org.tuckey</groupId>
+			<artifactId>urlrewritefilter</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+
+
+		<!-- 生成静态页面的-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
