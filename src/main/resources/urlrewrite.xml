@@ -1,0 +1,9 @@
+<urlrewrite>
+
+    <!-- 静态网页 -->
+    <rule>
+        <from>/a</from>
+        <to>/user/login</to>
+    </rule>
+
+</urlrewrite>

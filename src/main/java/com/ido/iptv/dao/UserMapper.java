@@ -2,11 +2,10 @@ package com.ido.iptv.dao;
 
 import com.ido.iptv.entity.po.User;
 
-import java.util.List;
-
 public interface UserMapper {
-
     int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
 
     int insertSelective(User record);
 
@@ -14,7 +13,5 @@ public interface UserMapper {
 
     int updateByPrimaryKeySelective(User record);
 
-    User selectByUsername(String username);
-
-    List<String> getRoles(Integer id);
+    int updateByPrimaryKey(User record);
 }
