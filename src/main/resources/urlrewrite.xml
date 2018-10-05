@@ -1,8 +1,14 @@
 <urlrewrite>
 
-    <!-- 静态网页 -->
+    <!-- 跳转规则 -->
     <rule>
+        <!-- 规则名称 -->
+        <name>login</name>
+        <!-- 所有的conditions在rule拦截时都会执行（除非next设置为or） -->
+        <condition name="host" operator="equal">^a$</condition>
+        <!-- 拦截请求的url  -->
         <from>/a</from>
+        <!-- 需求重定向的url -->
         <to>/user/login</to>
     </rule>
 
